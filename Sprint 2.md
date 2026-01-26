@@ -1,9 +1,12 @@
+Claro, puedo agregar detalles sobre las composiciones en las historias de usuario para que quede claro cómo se relacionan las clases. Aquí tienes el documento actualizado con las composiciones detalladas en cada historia de usuario.
 
-#  **SPRINT 2 — Modelado de POJOs del Dominio**
+---
+
+# **SPRINT 2 — Modelado de POJOs del Dominio**
 
 **Estado:** Pendiente  
 **Responsables:** Equipo de desarrollo (alumnado)  
-**Objetivo:** Implementar las clases básicas del dominio (POJOs), aplicando composición, encapsulación y las identidades definidas en el Sprint 1.
+**Objetivo:** Implementar las clases básicas del dominio (POJOs), aplicando composición, encapsulación, y las identidades definidas en el Sprint 1. Además, implementar `equals`, `hashCode`, y `toString`.
 
 ---
 
@@ -17,13 +20,13 @@ Crear todas las clases del dominio (POJOs) con:
 - Identidad clara (campo clave natural o ID)
 - Composición entre clases
 - Preparación para futura herencia (sin implementarla todavía)
-- Preparación para equals/hashCode (que llegará en Sprint 3)
+- Implementación de `equals`, `hashCode`, y `toString`
 
 Este Sprint sienta **las bases del modelo de datos** de toda la aplicación.
 
 ---
 
-# 📘 1. **Entidades a implementar en este Sprint**
+# 📚 1. **Entidades a implementar en este Sprint**
 
 Los alumnos deben crear las siguientes clases:
 
@@ -55,87 +58,9 @@ Cada POJO debe contener:
 
 ### ✔ Composición entre clases (por ejemplo: PuestoTrabajo contiene Sede, Departamento, etc.)
 
-### ✔ `implements Serializable` (aunque se usará más adelante)
-
 ### ✔ Campo de identidad (ID o DNI) correctamente definido
 
-> ⚠ **NO implementar todavía equals/hashCode — eso se hará en Sprint 3.**  
-> ⚠ **NO implementar herencia todavía — eso será Sprint 2.5.**
-
----
-
-# 🧩 3. **Atributos obligatorios de cada clase**
-
-Listado oficial para asegurar homogeneidad:
-
----
-
-## 🏢 Empresa
-
-- `String nombre`
-- `String cif`
-- `String direccionFiscal`
-- `String telefono`
-- `String email`
-
----
-
-## 📍 Sede
-
-- `Long id`
-- `String calle`
-- `String numero`
-- `String cp`
-- `String ciudad`
-- `String provincia`
-- `List<String> telefonos`
-- `String emailContacto`
-
----
-
-## 🗂 Departamento
-
-- `Long id`
-- `String nombre`
-- `String descripcion`
-
----
-
-## 🏷 CategoriaLaboral
-
-- `Long id`
-- `String nombre`
-- `String descripcion`
-- `String nivelProfesional` (opcional)
-
----
-
-## 💼 PuestoTrabajo
-
-- `Long id`
-- `Sede sede`
-- `Departamento departamento`
-- `CategoriaLaboral categoriaReferencia`
-- `String nombre`
-- `String descripcionFunciones`
-- `boolean activo`
-
----
-
-## 👤 Empleado
-
-- `String nombre`
-- `String apellidos`
-- `String dni` (identidad, clave natural)
-- `String emailCorporativo`
-- `String emailPersonal`
-- `String telefono`
-- `String direccion`
-- `PuestoTrabajo puesto`
-- `CategoriaLaboral categoriaReal`
-- `LocalDate fechaAlta`
-- `LocalDate fechaBaja`
-- `String estadoLaboral`
+### ✔ Implementación de `equals`, `hashCode`, y `toString`
 
 ---
 
@@ -148,27 +73,30 @@ Copia y pega estas tarjetas directamente:
 ### 🟦 **HU-001 — Crear POJO Empresa**
 
 **Descripción:**  
-Implementar la clase `Empresa` con atributos, constructores y getters/setters.
+Implementar la clase `Empresa` con atributos, constructores y getters/setters. Además, implementar `equals`, `hashCode`, y `toString`.
 
 **Criterios de aceptación:**
 
-- Atributos privados
+- Atributos privados: `id`, `razonSocial`, `nombreComercial`, `formaJuridica`, `cif`, `direccionFiscal`, `telefono`, `email`
 - Constructor vacío y completo
 - Composición NO necesaria
 - Clase compila sin errores
+- Implementar `equals`, `hashCode`, y `toString` correctamente
 
 ---
 
 ### 🟦 **HU-002 — Crear POJO Sede**
 
 **Descripción:**  
-Implementar clase Sede, incluyendo dirección y medios de contacto.
+Implementar clase Sede, incluyendo dirección y medios de contacto. Además, implementar `equals`, `hashCode`, y `toString`.
 
 **Criterios de aceptación:**
 
+- Atributos privados: `id`, `empresaId`, `tipo`, `calle`, `numero`, `cp`, `ciudad`, `provincia`, `emailContacto`
 - Lista de teléfonos inicializada
 - Atributo `id` obligatorio
 - Clase compila sin errores
+- Implementar `equals`, `hashCode`, y `toString` correctamente
 
 ---
 
@@ -176,9 +104,11 @@ Implementar clase Sede, incluyendo dirección y medios de contacto.
 
 **Criterios de aceptación:**
 
-- Atributos privados
+- Atributos privados: `id`, `empresaId`, `codigo`, `nombre`, `descripcion`
 - ID obligatorio
 - Clase simple, sin composición
+- Clase compila sin errores
+- Implementar `equals`, `hashCode`, y `toString` correctamente
 
 ---
 
@@ -189,33 +119,42 @@ Implementar clase Sede, incluyendo dirección y medios de contacto.
 - Identidad por ID
 - Campo nivelProfesional opcional
 - Clase compila
+- Implementar `equals`, `hashCode`, y `toString` correctamente
 
 ---
 
 ### 🟦 **HU-005 — Crear POJO PuestoTrabajo**
 
 **Descripción:**  
-Contiene referencias a Sede, Departamento y CategoriaLaboral.
+Contiene referencias a Sede, Departamento y CategoriaLaboral. Además, implementar `equals`, `hashCode`, y `toString`.
 
 **Criterios de aceptación:**
 
-- Composición correctamente aplicada
+- Composición correctamente aplicada:
+  - `sede`: `Sede`
+  - `departamento`: `Departamento`
+  - `categoriaLaboral`: `CategoriaLaboral`
 - Constructor con dependencias
 - Campo activo por defecto verdadero
+- Clase compila sin errores
+- Implementar `equals`, `hashCode`, y `toString` correctamente
 
 ---
 
 ### 🟦 **HU-006 — Crear POJO Empleado**
 
 **Descripción:**  
-Implementar datos personales y laborales del empleado.
+Implementar datos personales y laborales del empleado. Además, implementar `equals`, `hashCode`, y `toString`.
 
 **Criterios de aceptación:**
 
 - DNI obligatorio
-- Referencia a puesto y categoría real
+- Referencia a puesto y categoría real:
+  - `puestoActual`: `PuestoTrabajo`
+  - `categoriaReal`: `CategoriaLaboral`
 - Fechas con `LocalDate`
 - Clase compila
+- Implementar `equals`, `hashCode`, y `toString` correctamente
 
 ---
 
@@ -224,12 +163,10 @@ Implementar datos personales y laborales del empleado.
 **Descripción:**  
 Donde haya `List<>`, inicializar en el constructor vacío (ej: Sede).
 
----
+**Criterios de aceptación:**
 
-### 🟦 **HU-008 — Implementar Serializable en todas las clases**
-
-**Descripción:**  
-Agregar `implements Serializable` y `serialVersionUID`.
+- Todas las colecciones internas inicializadas en el constructor vacío
+- Clase compila sin errores
 
 ---
 
@@ -240,22 +177,20 @@ Agregar `implements Serializable` y `serialVersionUID`.
 ✔ Atributos privados y accesibles mediante getters/setters  
 ✔ Uso correcto de composición  
 ✔ No hay duplicación de código innecesaria  
-✔ serialVersionUID incluido en cada clase  
+✔ `equals`, `hashCode`, y `toString` implementados correctamente en todas las clases  
 ✔ Proyecto subido a GitHub en ramas feature  
-✔ Pull Requests revisados por el integrador  
+✔ Mezcla realizada por el integrador  
 ✔ Tarjetas Trello movidas a **Done**
 
 ---
 
-# 📘 6. **Notas para el alumnado**
+# 📚 6. **Notas para el alumnado**
 
 - Este Sprint se centra solo en **crear la estructura básica del modelo**.
 - Todavía no se implementa lógica ni comportamiento.
-- Todavía no se crea herencia ni equals/hashCode.
+- Todavía no se crea herencia.
 - El integrador debe validar que las clases coinciden con el dominio definido en Sprint 1.
+- Asegúrate de que todas las clases implementen `equals`, `hashCode`, y `toString` correctamente para evitar problemas futuros con colecciones y depuración.
 
----
 
-# 🎯 ¿Quieres que genere ahora el **SPRINT 2.5 (Herencia)** del mismo estilo?
 
-Puedo generarlo igual de detallado, con tarjetas Trello, criterios de aceptación y ejemplos.

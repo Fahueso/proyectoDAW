@@ -1,4 +1,4 @@
-# **SPRINT 1 — Análisis del Dominio (DOCUMENTO ENTREGADO POR EL PROFESOR)**
+# **SPRINT 1 — Análisis del Dominio
 
 **Estado:** ✔ Completado  
 **Responsable:** Profesor  
@@ -38,11 +38,14 @@ Representa la única empresa gestionada por la aplicación.
 
 **Atributos previstos:**
 
-- Nombre
-- CIF
-- Dirección fiscal
-- Teléfono
-- Email de contacto
+- `id`: `long`
+- `razonSocial`: `String`
+- `nombreComercial`: `String`
+- `formaJuridica`: `String`
+- `cif`: `String`
+- `direccionFiscal`: `String`
+- `telefono`: `String`
+- `email`: `String`
 
 La empresa **no tiene CRUD** (solo existe una).  
 Se podrá **editar**, pero no crear ni borrar.
@@ -55,10 +58,15 @@ Cada empresa tiene una o varias sedes físicas.
 
 **Atributos previstos:**
 
-- ID
-- Dirección completa (calle, número, CP, ciudad, provincia)
-- Teléfonos
-- Email de contacto
+- `id`: `long`
+- `empresaId`: `long`
+- `tipo`: `String`
+- `calle`: `String`
+- `numero`: `String`
+- `cp`: `String`
+- `ciudad`: `String`
+- `provincia`: `String`
+- `emailContacto`: `String`
 
 ---
 
@@ -68,9 +76,11 @@ Divisiones de trabajo dentro de la empresa.
 
 **Atributos previstos:**
 
-- ID
-- Nombre
-- Descripción
+- `id`: `long`
+- `empresaId`: `long`
+- `codigo`: `String`
+- `nombre`: `String`
+- `descripcion`: `String`
 
 ---
 
@@ -80,10 +90,12 @@ Clasifica el tipo de trabajo del empleado.
 
 **Atributos previstos:**
 
-- ID
-- Nombre (Administrativo, Técnico, etc.)
-- Descripción
-- Nivel profesional (opcional)
+- `id`: `long`
+- `empresaId`: `long`
+- `convenio`: `String`
+- `grupoProfesional`: `String`
+- `nivel`: `String`
+- `descripcion`: `String`
 
 ---
 
@@ -93,13 +105,15 @@ Representa una posición dentro de una sede y un departamento.
 
 **Atributos previstos:**
 
-- ID
-- Sede
-- Departamento
-- Categoría laboral de referencia
-- Nombre del puesto
-- Descripción de funciones
-- Estado (activo/inactivo)
+- `id`: `long`
+- `sedeId`: `long`
+- `departamentoId`: `long`
+- `categoriaReferencia`: `long`
+- `nombre`: `String`
+- `descripcionFunciones`: `String`
+- `jornada`: `String`
+- `modalidad`: `String`
+- `activo`: `boolean`
 
 ---
 
@@ -109,16 +123,58 @@ Almacena la información personal y laboral del trabajador.
 
 **Atributos previstos:**
 
-- Nombre
-- Apellidos
-- DNI (clave natural, único)
-- Teléfono
-- Email corporativo
-- Dirección personal
-- Puesto asignado
-- Categoría real
-- Fechas de alta y baja
-- Estado laboral
+- `id`: `long`
+- `puestoActual`: `long`
+- `categoriaReal`: `long`
+- `dni`: `String`
+- `nombre`: `String`
+- `apellidos`: `String`
+- `emailCorporativo`: `String`
+- `emailPersonal`: `String`
+- `telefono`: `String`
+- `direccion`: `String`
+- `numeroSS`: `String`
+- `fechaNacimiento`: `Date`
+- `fechaAlta`: `Date`
+- `fechaBaja`: `Date`
+- `estadoLaboral`: `String`
+
+---
+
+## 🔗 2.7. Usuario
+
+Representa un usuario del sistema, asociado a un empleado.
+
+**Atributos previstos:**
+
+- `id`: `long`
+- `empleadoId`: `long`
+- `username`: `String`
+- `passwordHash`: `String`
+- `activo`: `boolean`
+
+---
+
+## 🔗 2.8. Rol
+
+Representa un rol dentro del sistema.
+
+**Atributos previstos:**
+
+- `id`: `long`
+- `nombre`: `String`
+
+---
+
+## 🔗 2.9. UsuarioRol
+
+Relación many-to-many entre usuarios y roles.
+
+**Atributos previstos:**
+
+- `id`: `long`
+- `usuarioId`: `long`
+- `rolId`: `long`
 
 ---
 
@@ -128,14 +184,19 @@ Estas relaciones ayudan a comprender cómo interactúan los objetos entre sí:
 
 - Una **empresa** tiene varias **sedes**.
 - Una **empresa** tiene varios **departamentos**.
-- Una **categoría laboral** puede asignarse a varios puestos o empleados.
+- Una **empresa** tiene varias **categorías laborales**.
+- Una **sede** puede tener varios **puestos de trabajo**.
+- Un **departamento** puede tener varios **puestos de trabajo**.
+- Una **categoría laboral** puede asignarse a varios **puestos de trabajo**.
 - Un **puesto de trabajo** está asociado a:
-    - una sede
-    - un departamento
-    - una categoría laboral de referencia
+    - una **sede**
+    - un **departamento**
+    - una **categoría laboral de referencia**
 - Un **empleado** tiene:
-    - un puesto de trabajo
-    - una categoría laboral real
+    - un **puesto de trabajo**
+    - una **categoría laboral real**
+- Un **usuario** está asociado a un **empleado**.
+- Un **usuario** puede tener varios **roles**.
 
 Todas las relaciones se trabajarán mediante **composición** en los POJOs.
 
@@ -147,12 +208,14 @@ Para evitar duplicados y permitir el uso correcto de colecciones, cada clase ten
 
 |Entidad|Identidad|
 |---|---|
-|Empresa|CIF|
-|Sede|ID|
-|Departamento|ID|
-|Categoría laboral|ID|
-|PuestoTrabajo|ID|
-|Empleado|DNI|
+|Empresa|`cif`|
+|Sede|`id`|
+|Departamento|`id`|
+|Categoría laboral|`id`|
+|PuestoTrabajo|`id`|
+|Empleado|`dni`|
+|Usuario|`username`|
+|Rol|`nombre`|
 
 Esto permitirá implementar con sentido `equals()` y `hashCode()` en el Sprint 3.
 
@@ -166,9 +229,9 @@ La herencia se utilizará para mejorar el diseño:
 
 Clase padre con:
 
-- nombre
-- apellidos
-- dni
+- `nombre`: `String`
+- `apellidos`: `String`
+- `dni`: `String`
 
 El alumnado lo implementará más adelante.
 
@@ -194,6 +257,8 @@ Estas reglas se aplicarán a partir del Sprint 3 (Servicios), pero se definen aq
     - una categoría válida
 - Un empleado no puede darse de baja sin antes haber sido dado de alta.
 - No se pueden eliminar sedes, puestos o departamentos si tienen empleados asociados.
+- Un usuario debe tener un empleado asociado.
+- Un usuario puede tener varios roles, pero debe tener al menos uno.
 
 ---
 
@@ -234,18 +299,3 @@ Todo eso comienza en el Sprint 2.
 
 ---
 
-# 🎯 9. Conclusión del Sprint 1
-
-Este Sprint sienta la base teórica del proyecto:
-
-- Dominio definido
-- Entidades claras
-- Relaciones establecidas
-- Reglas del negocio visibles
-- Identidades asignadas
-- Herencia prevista
-- Arquitectura general acordada
-
-A partir del Sprint 2, el alumnado empezará a programar.
-
----
