@@ -221,8 +221,7 @@ Esto permitirá implementar con sentido `equals()` y `hashCode()` en el Sprint 3
 
 ---
 
-# 🧩 5. Herencia prevista en el dominio (se aplicará en Sprint 2.5)
-
+# 🧩 5. Herencia prevista en el dominio (se aplicará en otro Sprint)
 La herencia se utilizará para mejorar el diseño:
 
 ### ✔ `Persona` → `Empleado`

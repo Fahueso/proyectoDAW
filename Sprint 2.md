@@ -156,17 +156,6 @@ Implementar datos personales y laborales del empleado. Además, implementar `equ
 - Clase compila
 - Implementar `equals`, `hashCode`, y `toString` correctamente
 
----
-
-### 🟦 **HU-007 — Inicializar colecciones internas**
-
-**Descripción:**  
-Donde haya `List<>`, inicializar en el constructor vacío (ej: Sede).
-
-**Criterios de aceptación:**
-
-- Todas las colecciones internas inicializadas en el constructor vacío
-- Clase compila sin errores
 
 ---
 
