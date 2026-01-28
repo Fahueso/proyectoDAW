@@ -93,7 +93,6 @@ Implementar clase Sede, incluyendo dirección y medios de contacto. Además, imp
 **Criterios de aceptación:**
 
 - Atributos privados: `id`, `empresaId`, `tipo`, `calle`, `numero`, `cp`, `ciudad`, `provincia`, `emailContacto`
-- Lista de teléfonos inicializada
 - Atributo `id` obligatorio
 - Clase compila sin errores
 - Implementar `equals`, `hashCode`, y `toString` correctamente

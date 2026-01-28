@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Sprint 2.md",
+                "file": "Sprint 3.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Sprint 2"
+              "title": "Sprint 3"
             }
           }
         ]
@@ -186,10 +186,10 @@
   },
   "active": "b682e71b138d97f2",
   "lastOpenFiles": [
-    "Sprint 1.md",
-    "Diagramas Sprint 1.md",
     "Sprint 2.md",
     "Sprint 3.md",
+    "Sprint 1.md",
+    "Diagramas Sprint 1.md",
     "SQL.md",
     "Pasted image 20260126134203.png"
   ]
