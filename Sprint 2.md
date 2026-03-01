@@ -93,7 +93,6 @@ Implementar clase Sede, incluyendo dirección y medios de contacto. Además, imp
 **Criterios de aceptación:**
 
 - Atributos privados: `id`, `empresaId`, `tipo`, `calle`, `numero`, `cp`, `ciudad`, `provincia`, `emailContacto`
-- Lista de teléfonos inicializada
 - Atributo `id` obligatorio
 - Clase compila sin errores
 - Implementar `equals`, `hashCode`, y `toString` correctamente
@@ -156,17 +155,6 @@ Implementar datos personales y laborales del empleado. Además, implementar `equ
 - Clase compila
 - Implementar `equals`, `hashCode`, y `toString` correctamente
 
----
-
-### 🟦 **HU-007 — Inicializar colecciones internas**
-
-**Descripción:**  
-Donde haya `List<>`, inicializar en el constructor vacío (ej: Sede).
-
-**Criterios de aceptación:**
-
-- Todas las colecciones internas inicializadas en el constructor vacío
-- Clase compila sin errores
 
 ---
 

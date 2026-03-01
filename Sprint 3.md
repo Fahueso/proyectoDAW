@@ -92,7 +92,7 @@ Copia y pega estas tarjetas directamente:
 
 ---
 
-### 🟦 **HU-009 — Implementar clase Persona**
+### 🟦 **HU-007 — Implementar clase Persona**
 
 **Descripción:**  
 Implementar la clase `Persona` con atributos comunes.
@@ -106,7 +106,7 @@ Implementar la clase `Persona` con atributos comunes.
 
 ---
 
-### 🟦 **HU-010 — Implementar clase Empleado (hereda de Persona)**
+### 🟦 **HU-008 — Implementar clase Empleado (hereda de Persona)**
 
 **Descripción:**  
 Implementar la clase `Empleado` heredando de `Persona`.
@@ -121,7 +121,7 @@ Implementar la clase `Empleado` heredando de `Persona`.
 
 ---
 
-### 🟦 **HU-011 — Implementar clase Ubicacion**
+### 🟦 **HU-009 — Implementar clase Ubicacion**
 
 **Descripción:**  
 Implementar la clase `Ubicacion` con atributos de dirección.
@@ -135,7 +135,7 @@ Implementar la clase `Ubicacion` con atributos de dirección.
 
 ---
 
-### 🟦 **HU-012 — Implementar clase Sede (hereda de Ubicacion)**
+### 🟦 **HU-010 — Implementar clase Sede (hereda de Ubicacion)**
 
 **Descripción:**  
 Implementar la clase `Sede` heredando de `Ubicacion`.
@@ -150,7 +150,7 @@ Implementar la clase `Sede` heredando de `Ubicacion`.
 
 ---
 
-### 🟦 **HU-013 — Implementar clase BaseEntity**
+### 🟦 **HU-011 — Implementar clase BaseEntity**
 
 **Descripción:**  
 Implementar la clase `BaseEntity` con atributo ID.
@@ -164,7 +164,7 @@ Implementar la clase `BaseEntity` con atributo ID.
 
 ---
 
-### 🟦 **HU-014 — Heredar BaseEntity en todas las entidades con ID**
+### 🟦 **HU-012 — Heredar BaseEntity en todas las entidades con ID**
 
 **Descripción:**  
 Hacer que todas las entidades con ID hereden de `BaseEntity`.
@@ -197,7 +197,3 @@ Hacer que todas las entidades con ID hereden de `BaseEntity`.
 - Asegúrate de que las clases heredan correctamente y reutilizan código.
 - El integrador debe validar que las clases coinciden con el diseño definido en el Sprint 1 y 2.
 - No se implementa lógica ni comportamiento específico en este Sprint.
-
----
-
-Este documento proporciona una guía detallada para implementar la herencia en las clases del dominio, mejorando el diseño y reutilizando código. El alumnado puede utilizar este documento como guía para el desarrollo del Sprint 3.
