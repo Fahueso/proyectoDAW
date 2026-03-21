@@ -14,12 +14,11 @@ En este Sprint se debe realizar:
 ### 🟦 Plantilla 1: Servicio de **Departamento** (DepartamentoService)
 
   
-Estudiar el código fuente de DepartamentoService y utilizarlo como plantilla para las historias 21 a 25
+Estudiar el código fuente de DepartamentoService y utilizarlo como plantilla para las historias 21 a 24
 
-  
 ### 🟦 Plantilla 2: Menú de **Departamento** (DepartamentoMenu)
 
-Estudia el código fuente de Departamento menú y utilizarlo como plantilla para las historias 26 a 31
+Estudia el código fuente de Departamento menú y utilizarlo como plantilla para las historias 25 a 28
 
 ### 🟦 Clase a completar 1: App.java
 
