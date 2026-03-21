@@ -27,7 +27,7 @@ Todo esto lo encontraréis en las diferentes subcarpetas que acompañan a estos 
 
 ---
 
-## 🟦 **HU-10 — Pedir los datos de una Persona correctamente**
+## 🟦 **HU-13 — Pedir los datos de una Persona correctamente**
 
 **Quiero poder crear personas pidiendo su nombre, apellidos y un DNI válido**,  
 porque muchos objetos del sistema dependen de esa información (por ejemplo, un Empleado).
@@ -40,7 +40,7 @@ porque muchos objetos del sistema dependen de esa información (por ejemplo, un 
 
 ---
 
-## 🟦 **HU-11 — Pedir la dirección de forma uniforme**
+## 🟦 **HU-14 — Pedir la dirección de forma uniforme**
 
 **Quiero pedir direcciones (calle, número, CP, ciudad y provincia) siempre igual**,  
 para no repetir el mismo código mil veces.
@@ -55,7 +55,7 @@ Este helper se usará en Sede y en cualquier cosa futura que herede de Ubicació
 
 ---
 
-## 🟦 **HU-12 — Crear Empresas desde consola**
+## 🟦 **HU-15 — Crear Empresas desde consola**
 
 **Quiero crear empresas completas introduciendo sus datos**,  
 porque son la base del flujo del programa.
@@ -68,7 +68,7 @@ porque son la base del flujo del programa.
 
 ---
 
-## 🟦 **HU-13 — Crear Sedes reutilizando la herencia**
+## 🟦 **HU-16 — Crear Sedes reutilizando la herencia**
 
 **Quiero crear sedes con dirección, pero sin repetir la lógica de pedir calle, número, CP…**,  
 porque eso ya lo hace `UbicacionConsoleSupport`.
@@ -82,7 +82,7 @@ porque eso ya lo hace `UbicacionConsoleSupport`.
 ---
 
 
-## 🟦 **HU-14 — Crear Categorías Laborales**
+## 🟦 **HU-17 — Crear Categorías Laborales**
 
 **Quiero crear categorías laborales**,  
 porque luego van asociadas a empleados y puestos.
@@ -95,7 +95,7 @@ porque luego van asociadas a empleados y puestos.
 
 ---
 
-## 🟦 **HU-15 — Crear Puestos de Trabajo con sus dependencias**
+## 🟦 **HU-18 — Crear Puestos de Trabajo con sus dependencias**
 
 **Quiero crear puestos de trabajo sin preocuparme de si ya tengo sede, departamento o categoría**, porque si faltan, la factoría los solicitará automáticamente.
 
@@ -107,7 +107,7 @@ porque luego van asociadas a empleados y puestos.
 
 ---
 
-## 🟦 **HU-16 — Crear Empleados usando herencia y composición**
+## 🟦 **HU-19 — Crear Empleados usando herencia y composición**
 
 **Quiero crear empleados pidiendo solo sus datos propios**,  
 porque lo de Persona (DNI, nombre, apellidos) ya está resuelto en un helper.
@@ -121,7 +121,7 @@ porque lo de Persona (DNI, nombre, apellidos) ya está resuelto en un helper.
 
 ---
 
-## 🟩 **HU-17 — Probar todo en una App**
+## 🟩 **HU-20 — Probar todo en una App**
 
 **Quiero una aplicación principal que cree todos los objetos uno detrás de otro**,  
 para comprobar que todo funciona.
